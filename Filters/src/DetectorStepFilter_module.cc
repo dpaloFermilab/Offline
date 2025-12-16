@@ -129,7 +129,8 @@ namespace mu2e {
 
   bool DetectorStepFilter::filter(art::Event& event) {
     double mbtime = GlobalConstantsHandle<PhysicsParams>()->getNominalDRPeriod();
-    bool selecttrk(false), selectcalo(false), selectcrv(false);
+    bool selecttrk(true), selectcalo(false), selectcrv(true);
+
     ++nEvt_;
     // Count Trk step from same particle
     using CT = std::map<const SimParticle*,unsigned>;
